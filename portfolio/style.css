@@ -294,6 +294,170 @@ section h1 span {
   box-shadow: var(--shadow-card);
 }
 
+/* --- SKILLS SECTION --- */
+
+.skills-content {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  justify-content: center;
+
+  max-width: 800px;
+
+}
+
+
+
+.html-btn {
+
+  border: 1px solid var(--text-secondary);
+
+  border-radius: 50px;
+
+  padding: 0.75rem 1.5rem;
+
+  background-color: var(--card-bg);
+
+  color: var(--text-primary);
+
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+
+  cursor: default;
+
+}
+
+
+
+.html-btn:hover {
+
+  background-color: var(--accent-primary);
+
+  color: #0e1013;
+
+  border-color: var(--accent-primary);
+
+  transform: translateY(-3px);
+
+}
+
+/* --- PROJECTS SECTION --- */
+.Projects {
+  width: 100%;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Projects h1 {
+  font-size: var(--fs-h2);
+  margin-bottom: 3rem;
+  color: var(--accent-primary);
+  text-align: center;
+}
+.Projects h1 span {
+  color: var(--text-primary);
+}
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  width: 90%;
+  max-width: 1200px;
+}
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--btn-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.project-info h3 {
+  color: var(--text-primary);
+  font-size: var(--fs-h3);
+  margin-bottom: 0.75rem;
+}
+.project-info p {
+  color: var(--text-secondary);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.projects-skills-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.skill-tag {
+  background-color: rgba(234, 172, 0, 0.1);
+  color: var(--accent-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: var(--fs-small);
+  font-family: "Fira Code", monospace;
+}
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: var(--fs-small);
+  text-align: center;
+  flex: 1;
+}
+.outline {
+  background-color: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+}
+.outline:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+/* Light mode overrides for the project cards */
+[data-theme="light"] .project-card {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .skill-tag {
+  background-color: rgba(217, 119, 6, 0.1);
+  color: var(--accent-primary);
+}
+
 /* --- ANIMATION CLASSES --- */
 .fade-in {
   opacity: 0;
