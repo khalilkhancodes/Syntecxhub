@@ -208,7 +208,7 @@ section h1 span {
   color: var(--text-primary);
 }
 /* BUTTONS */
-.primary-btn {
+.primary-btn,.primary-btn a {
   padding: var(--btn-padding);
   background-color: var(--accent-primary);
   color: #0e1013;
@@ -297,53 +297,27 @@ section h1 span {
 /* --- SKILLS SECTION --- */
 
 .skills-content {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 1rem;
-
   justify-content: center;
-
   max-width: 800px;
-
 }
-
-
-
 .html-btn {
-
   border: 1px solid var(--text-secondary);
-
   border-radius: 50px;
-
   padding: 0.75rem 1.5rem;
-
   background-color: var(--card-bg);
-
   color: var(--text-primary);
-
   font-weight: bold;
-
   transition: all 0.3s ease;
-
   cursor: default;
-
 }
-
-
-
 .html-btn:hover {
-
   background-color: var(--accent-primary);
-
   color: #0e1013;
-
   border-color: var(--accent-primary);
-
   transform: translateY(-3px);
-
 }
 
 /* --- PROJECTS SECTION --- */
@@ -412,15 +386,15 @@ section h1 span {
 .project-info p {
   color: var(--text-secondary);
   font-size: var(--fs-body);
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
   flex-grow: 1;
 }
 .projects-skills-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 .skill-tag {
   background-color: rgba(234, 172, 0, 0.1);
@@ -449,6 +423,7 @@ section h1 span {
   background-color: var(--accent-primary);
   color: var(--bg-primary);
 }
+
 /* Light mode overrides for the project cards */
 [data-theme="light"] .project-card {
   border-color: rgba(0, 0, 0, 0.1);
@@ -457,6 +432,81 @@ section h1 span {
   background-color: rgba(217, 119, 6, 0.1);
   color: var(--accent-primary);
 }
+
+/* --- CONTACT SECTION --- */
+.Contact {
+  min-height: auto;
+  padding-bottom: 6rem;
+}
+.contact-content {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+.contact-content p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.input-group {
+  display: flex;
+  gap: 1.5rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--text-secondary);
+  border-radius: var(--btn-radius);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--fs-body);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-primary);
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: var(--bg-secondary);
+  padding: 3rem 0;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-content h2 {
+  color: var(--accent-primary);
+}
+.footer-content p {
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+}
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+.social-links a:hover {
+  color: var(--accent-primary);
+}
+a {
+  border-radius: 6px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
 
 /* --- ANIMATION CLASSES --- */
 .fade-in {
@@ -469,6 +519,26 @@ section h1 span {
   opacity: 1;
   transform: translateY(0);
 }
+.navbar-icons a::after,footer a::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--btn-radius);
+  font-size: var(--fs-small);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+a:hover::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
 
 @media screen and (max-width: 768px) {
   .left-nav ul {
