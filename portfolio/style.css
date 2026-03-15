@@ -187,6 +187,124 @@ nav {
   font-size: 1.2rem;
 }
 
+section {
+  min-height: 100vh;
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0 2rem 0;
+}
+section h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+section h1 span {
+  color: var(--text-primary);
+}
+/* BUTTONS */
+.primary-btn {
+  padding: var(--btn-padding);
+  background-color: var(--accent-primary);
+  color: #0e1013;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  font-size: 1rem;
+}
+.primary-btn:hover {
+  transform: translateY(-3px);
+  background-color: var(--accent-hover);
+}
+
+
+
+/* --- HERO SECTION --- */
+.Hero {
+  position: relative;
+  width: 100vw;
+  padding: 0;
+}
+.Hero img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.3;
+}
+.hero-content {
+  position: absolute;
+  text-align: center;
+}
+.hero-content .name {
+  font-family: "Anton", sans-serif;
+  font-size: var(--fs-hero);
+  letter-spacing: 3px;
+  color: var(--text-primary);
+  margin-bottom: 0;
+  line-height: 1;
+}
+.hero-content p {
+  font-size: var(--fs-h3);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+/* --- ABOUT SECTION --- */
+.about-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+.about-content > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.about-content p {
+  font-size: var(--fs-body-large);
+  line-height: 1.6;
+}
+.bullet-points {
+  font-family: "Fira Code", monospace;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.about-hr {
+  border: none;
+  border-top: 1px solid var(--text-secondary);
+  opacity: 0.3;
+}
+.about-content img {
+  flex: 1;
+  max-width: 400px;
+  height: 350px;
+  border-radius: var(--btn-radius);
+  object-fit: cover;
+  box-shadow: var(--shadow-card);
+}
+
+/* --- ANIMATION CLASSES --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @media screen and (max-width: 768px) {
   .left-nav ul {
@@ -194,5 +312,21 @@ nav {
   }
   .menu {
     display: block; /* Show hamburger */
+  }
+  section h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .about-content img {
+    display: none; /* Hide image on smaller screens */
+  }
+  .about-content > div {
+    gap: 2rem;
+    text-align: center;
   }
 }
